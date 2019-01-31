@@ -18,8 +18,8 @@ namespace FolderSecurityPermission
 
             Controller.ValidateName(ref input);                             // Call the method to validate name to make sure it's not null or empty
 
-            string path = @"c:\TestDirectory\" + input;                     // Specify the directory you want to manipulate - C drive on the TestDirectory folder
-
+            string path = @"c:\TestDirectory\" + input;                     // Specify the directory you want to manipulate - Test Environment = C drive on the TestDirectory folder
+                                                                            // Can change path to wherever
             // FOLDER CREATION
             try
             {
