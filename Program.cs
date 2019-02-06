@@ -117,7 +117,11 @@ namespace FolderSecurityPermission
                     Controller.SetFolderPermissionFullControl(path);
                     Console.WriteLine("{0} has Full Control permission.", input);
                 } // end else if
-
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("{0} has standard permissions.", input);
+                } // end else
             } // end if
 
         } // end Main method
