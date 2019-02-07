@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,7 +69,8 @@ namespace FolderSecurityPermission
             while (resp2 != "y" && resp2 != "n")
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("Invalid selection. \nDo you want to set permissions on {0}? (y/n): ", input);
+                Console.Write("Invalid selection. " +
+                    "\nDo you want to set permissions on {0}? (y/n): ", input);
                 resp2 = Console.ReadLine();
             } // end while
 
@@ -78,14 +79,17 @@ namespace FolderSecurityPermission
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Setting permissions for {0}.", input);
-                Console.Write("RE = Read and Execute \nR = Read \nM = Modify \nW = Write \nF = Full Control \nWhat permissions does {0} have? ", input);
+                Console.Write("RE = Read and Execute \nR = Read \nM = Modify \nW = Write \nF = Full Control " +
+                    "\nWhat permissions does {0} have? ", input);
                 string UserRights = Console.ReadLine();
 
                 // Validate to make sure user is only inputting the right variable (case sensitive)
                 while (UserRights != "RE" && UserRights != "R" && UserRights != "M" && UserRights != "W" && UserRights != "F")
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("Invalid Section. \nRE = Read and Execute \nR = Read \nM = Modify \nW = Write \nF = Full Control \nWhat permissions does {0} have? ", input);
+                    Console.Write("Invalid Section. " +
+                        "\nRE = Read and Execute \nR = Read \nM = Modify \nW = Write \nF = Full Control " +
+                        "\nWhat permissions does {0} have? ", input);
                     UserRights = Console.ReadLine();
                 } // end while
 
@@ -120,9 +124,15 @@ namespace FolderSecurityPermission
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("{0} has standard permissions.", input);
-                } // end else
+                    Console.WriteLine("{0} has no permissions.", input);
+                }// end else
+
             } // end if
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("{0} has no permissions.", input);
+            }// end else
 
         } // end Main method
     } // end Program
